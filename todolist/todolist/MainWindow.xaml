@@ -1,0 +1,21 @@
+﻿<Window x:Class="todolist.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:todolist"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" Closed="Window_Closed" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="TodoItemList"></StackPanel>
+        </ScrollViewer>
+        
+        <Button Grid.Row="1" x:Name="AddBtn" Click="AddBtn_Click" Background="#FF4ED9CC" Foreground="White" BorderBrush="Transparent">Add</Button>
+    </Grid>
+</Window>
