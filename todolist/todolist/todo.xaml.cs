@@ -76,6 +76,9 @@ namespace todolist
             }
         }
 
+        private void Money_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
+        }
     }
 }

@@ -32,3 +32,6 @@ C:\git\moneylist\todolist\todolist\obj\Debug\todolist.csproj.GenerateResource.ca
 C:\git\moneylist\todolist\todolist\obj\Debug\todolist.csproj.CoreCompileInputs.cache
 C:\git\moneylist\todolist\todolist\obj\Debug\todolist.exe
 C:\git\moneylist\todolist\todolist\obj\Debug\todolist.pdb
+C:\git\moneylist\todolist\todolist\obj\Debug\AddMark.g.cs
+C:\git\moneylist\todolist\todolist\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\git\moneylist\todolist\todolist\obj\Debug\AddMark.baml

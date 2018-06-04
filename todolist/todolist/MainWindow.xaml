@@ -9,13 +9,19 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
         </Grid.RowDefinitions>
 
         <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
             <StackPanel x:Name="TodoItemList"></StackPanel>
         </ScrollViewer>
+
         
-        <Button Grid.Row="1" x:Name="AddBtn" Click="AddBtn_Click" Background="DodgerBlue" Foreground="White" BorderBrush="Transparent">Add</Button>
+        <Rectangle Grid.Row="1" Fill="SteelBlue" Stroke="Transparent"></Rectangle>
+        <local:AddMark Grid.Row="1" Margin="20 10 295 10"></local:AddMark>
+        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="250 5 20 5">
+            <TextBlock FontSize="15" x:Name="BmiNumber1" Foreground="White" HorizontalAlignment="Right">總支出</TextBlock>
+            <TextBlock FontSize="30" x:Name="BmiNumber2" Foreground="White" HorizontalAlignment="Right" FontWeight="Bold" >0</TextBlock>
+        </StackPanel>
     </Grid>
 </Window>
