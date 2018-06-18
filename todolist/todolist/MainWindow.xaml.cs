@@ -25,15 +25,6 @@ namespace todolist
             InitializeComponent();
         }
 
-        private void AddBtn_Click(object sender, RoutedEventArgs e)
-        {
-            // 建立原件
-            todo item = new todo();
-
-            // 放入到 StackPanel
-            TodoItemList.Children.Add(item);
-        }
-
         // 關閉視窗的事件
         private void Window_Closed(object sender, EventArgs e)
         {
@@ -42,14 +33,8 @@ namespace todolist
             // 取得每一個項目的文字
             foreach (todo item in TodoItemList.Children)
             {
-                // 打勾符號
-                if (item.IsChecked == true)
-                    data += "+";
-                else
-                    data += "-";
-
                 // 文字
-                data += "|" + item.ItemName + "\r\n";
+                data += item.ItemDate + "|" + item.ItemName + "|" + item.ItemMoney + "\r\n";
             }
 
             // 存檔
@@ -70,16 +55,22 @@ namespace todolist
 
                 // 建立元件
                 todo item = new todo();
+                item.ItemDate = parts[0];
                 item.ItemName = parts[1];
-
-                if (parts[0] == "+")
-                    item.IsChecked = true;
-                else
-                    item.IsChecked = false;
+                item.ItemMoney = parts[2];
 
                 // 放入到 StackPanel
                 TodoItemList.Children.Add(item);
             }
+        }
+
+        private void AddMark_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            // 建立原件
+            todo item = new todo();
+
+            // 放入到 StackPanel
+            TodoItemList.Children.Add(item);
         }
     }
 }

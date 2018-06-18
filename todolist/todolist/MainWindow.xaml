@@ -16,12 +16,12 @@
             <StackPanel x:Name="TodoItemList"></StackPanel>
         </ScrollViewer>
 
-        
+
         <Rectangle Grid.Row="1" Fill="SteelBlue" Stroke="Transparent"></Rectangle>
-        <local:AddMark Grid.Row="1" Margin="20 10 295 10"></local:AddMark>
+        <local:AddMark Grid.Row="1" Margin="20 10 295 10" MouseDown="AddMark_MouseDown"></local:AddMark>
         <StackPanel Grid.Row="1" Orientation="Vertical" Margin="250 5 20 5">
-            <TextBlock FontSize="15" x:Name="BmiNumber1" Foreground="White" HorizontalAlignment="Right">總支出</TextBlock>
-            <TextBlock FontSize="30" x:Name="BmiNumber2" Foreground="White" HorizontalAlignment="Right" FontWeight="Bold" >0</TextBlock>
+            <TextBlock FontSize="15" x:Name="Totalword" Foreground="White" HorizontalAlignment="Right">總支出</TextBlock>
+            <TextBlock FontSize="30" x:Name="Total" Foreground="White" FontWeight="Bold" Margin="79,0,0,0" >0</TextBlock>
         </StackPanel>
     </Grid>
 </Window>

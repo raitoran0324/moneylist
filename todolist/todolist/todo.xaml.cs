@@ -30,29 +30,37 @@ namespace todolist
             {
                 ItemNameTb.Text = value;
             }
+
         }
 
-            public bool IsChecked
+        public string ItemMoney
+        {
+            
+            get
             {
-                set
-                {
-                    if (value == true)
-                    {
-                        CheckMark.Visibility = Visibility.Visible;
-                    }
-                    else
-                    {
-                        CheckMark.Visibility = Visibility.Collapsed;
-                    }
-                }
-                get
-                {
-                    if (CheckMark.Visibility == Visibility)
-                    return true;
-                    else
-                    return false;
-                }
+                return Money.Text;
+            }
+            set
+            {
+                Money.Text = value;
+            }
         }
+
+        public string ItemDate
+        {
+            
+            get
+            {
+                string D = DateA.Text + DateB.Text + DateC.Text;
+                return D;
+            }
+            set
+            {
+                string D = DateA.Text + DateB.Text + DateC.Text;
+                D = value;
+            }
+        }
+
 
         public todo()
         {
@@ -66,18 +74,25 @@ namespace todolist
 
         private void CheckBox_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (CheckMark.Visibility == Visibility)
-            {
-                CheckMark.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                CheckMark.Visibility = Visibility.Visible;
-            }
+ 
         }
 
         private void Money_TextChanged(object sender, TextChangedEventArgs e)
         {
+            
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Money_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if ((e.Key < Key.D0) != (e.Key > Key.D9))
+            {
+            e.Handled = true;
+            }
 
         }
     }
