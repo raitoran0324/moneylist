@@ -21,7 +21,7 @@
         <local:AddMark Grid.Row="1" Margin="20 10 295 10" MouseDown="AddMark_MouseDown"></local:AddMark>
         <StackPanel Grid.Row="1" Orientation="Vertical" Margin="250 5 20 5">
             <TextBlock FontSize="15" x:Name="Totalword" Foreground="White" HorizontalAlignment="Right">總支出</TextBlock>
-            <TextBlock FontSize="30" x:Name="Total" Foreground="White" FontWeight="Bold" Margin="79,0,0,0" >0</TextBlock>
+            <TextBlock FontSize="30" x:Name="Total" Foreground="White" FontWeight="Bold" Margin="77,0,0,0" MouseDown="Total_MouseDown">0</TextBlock>
         </StackPanel>
     </Grid>
 </Window>

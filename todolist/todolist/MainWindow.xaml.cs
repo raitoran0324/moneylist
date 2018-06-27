@@ -46,6 +46,7 @@ namespace todolist
             // 讀檔
             string[] lines = System.IO.File.ReadAllLines(@"C:\temp\data.txt");
 
+            int total = 0;
 
             // 逐行產生元件
             foreach (string line in lines)
@@ -59,8 +60,14 @@ namespace todolist
                 item.ItemName = parts[1];
                 item.ItemMoney = parts[2];
 
+                int itemPrice = int.Parse(parts[2]);
+                total += itemPrice;
+
                 // 放入到 StackPanel
                 TodoItemList.Children.Add(item);
+
+                // 顯示總金額
+                Total.Text = total.ToString();
             }
         }
 
@@ -71,6 +78,27 @@ namespace todolist
 
             // 放入到 StackPanel
             TodoItemList.Children.Add(item);
+        }
+
+        private void Total_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            // 讀檔            
+            string[] lines = System.IO.File.ReadAllLines(@"C:\temp\data.txt");
+
+            int total = 0;
+
+            // 逐行產生元件
+            foreach (string line in lines)
+            {
+                // 用符號分隔
+                string[] parts = line.Split('|');
+
+                int itemPrice = int.Parse(parts[2]);
+                total += itemPrice;
+
+                // 顯示總金額
+                Total.Text = total.ToString();
+            }
         }
     }
 }
