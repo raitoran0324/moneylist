@@ -20,6 +20,8 @@ namespace todolist
     /// </summary>
     public partial class todo : UserControl
     {
+        DateTime myDate = DateTime.Now;
+        
         public string ItemName
         {
             get
@@ -51,12 +53,12 @@ namespace todolist
             
             get
             {
-                string D = DateA.Text + DateB.Text + DateC.Text;
+                string D = myDate.ToString("M / d");
                 return D;
             }
             set
             {
-                string D = DateA.Text + DateB.Text + DateC.Text;
+                string D = myDate.ToString("M / d");
                 D = value;
             }
         }
@@ -84,7 +86,7 @@ namespace todolist
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            
         }
 
         private void Money_PreviewKeyDown(object sender, KeyEventArgs e)
@@ -94,6 +96,16 @@ namespace todolist
             e.Handled = true;
             }
 
+        }
+
+        private void DateA_TextChanged(object sender, TextChangedEventArgs e)
+        {
+          
+        }
+
+        private void DateA_Loaded(object sender, RoutedEventArgs e)
+        {
+            DateA.Text = myDate.ToString("M / d");
         }
     }
 }
